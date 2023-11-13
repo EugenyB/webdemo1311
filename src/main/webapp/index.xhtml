@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+    <h:head>
+        <title>All in one</title>
+    </h:head>
+    <h:body>
+        <h1>Hello!</h1>
+        <h:form>
+            <h:inputText value="#{userBean.user.name}"/>
+            <h:commandButton value="Hello" action="hello"/>
+        </h:form>
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel for="start" value="Start:"/>
+                <h:inputText id="start" value="#{tabulationBean.main.start}"/>
+                <h:outputLabel for="end" value="End:"/>
+                <h:inputText id="end" value="#{tabulationBean.main.end}"/>
+                <h:outputLabel for="step" value="Step:"/>
+                <h:inputText id="step" value="#{tabulationBean.main.step}"/>
+            </h:panelGrid>
+            <h:commandButton value="Tab" action="#{tabulationBean.tabulation()}"/>
+        </h:form>
+    </h:body>
+</f:view>
+</html>
